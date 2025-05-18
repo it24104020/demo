@@ -1,2 +1,0 @@
-# demo
-Oop project

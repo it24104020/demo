@@ -1,0 +1,13 @@
+[ {
+  "id" : 1,
+  "title" : "sunni",
+  "description" : "sfads",
+  "price" : 555.0,
+  "servicesIncluded" : "afda"
+}, {
+  "id" : 2,
+  "title" : "dasfvdsv",
+  "description" : "asfasf",
+  "price" : 550.0,
+  "servicesIncluded" : "afa"
+} ]

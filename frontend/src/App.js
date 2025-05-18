@@ -1,37 +1,23 @@
-import { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import CreateWeddingPlan from './Pages/creat';
 import './App.css';
 
 function App() {
-    const [backendMessage, setBackendMessage] = useState('Loading...');
-
-    // Call backend API
-    useEffect(() => {
-        fetch('/api/hello')
-            .then((res) => res.text())
-            .then((data) => setBackendMessage(data))
-            .catch((err) => setBackendMessage('Error: Backend not reachable'));
-    }, []);
-
     return (
         <div className="App">
             <header className="App-header">
-                {/* Frontend check */}
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>✅ Frontend is working!</p>
-
-                {/* Backend check */}
-                <p>🔗 Backend says: {backendMessage}</p>
-
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <h1>Wedding Planner</h1>
+                <nav>
+                    <Link className="App-link" to="/creat">Create Plan</Link>
+                </nav>
             </header>
+
+            <Routes>
+                <Route path="/" element={<Navigate to="/creat" />} />
+                <Route path="/creat" element={<CreateWeddingPlan />} />
+                {/* Add more routes here if needed */}
+            </Routes>
         </div>
     );
 }
